@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{4DC9FB17-29F3-46B5-A6A2-E3416C667599}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{602FB68C-3247-4312-AFDF-5432B042EA7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApi", "ToDoApi\ToDoApi.csproj", "{DA48F3E8-AD97-406D-AD31-CFF3BC151DCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiClient", "MauiClient\MauiClient.csproj", "{AF1B52D7-1BB6-4017-8DCF-B16FC564A5B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA48F3E8-AD97-406D-AD31-CFF3BC151DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA48F3E8-AD97-406D-AD31-CFF3BC151DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA48F3E8-AD97-406D-AD31-CFF3BC151DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA48F3E8-AD97-406D-AD31-CFF3BC151DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1B52D7-1BB6-4017-8DCF-B16FC564A5B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF1B52D7-1BB6-4017-8DCF-B16FC564A5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF1B52D7-1BB6-4017-8DCF-B16FC564A5B5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AF1B52D7-1BB6-4017-8DCF-B16FC564A5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF1B52D7-1BB6-4017-8DCF-B16FC564A5B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF1B52D7-1BB6-4017-8DCF-B16FC564A5B5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA48F3E8-AD97-406D-AD31-CFF3BC151DCB} = {4DC9FB17-29F3-46B5-A6A2-E3416C667599}
+		{AF1B52D7-1BB6-4017-8DCF-B16FC564A5B5} = {4DC9FB17-29F3-46B5-A6A2-E3416C667599}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08B4100F-3077-432C-984B-6101FE284835}
+	EndGlobalSection
+EndGlobal
