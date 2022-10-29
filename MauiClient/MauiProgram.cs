@@ -1,4 +1,5 @@
 ﻿using MAUIClient.DataService;
+using MauiClient.Pages;
 
 namespace MauiClient
 {
@@ -17,6 +18,7 @@ namespace MauiClient
             builder.Services.AddSingleton<IToDoService, ToDoService>();
 
             builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddTransient<ManageToDoPage>();
 
             return builder.Build();
         }
