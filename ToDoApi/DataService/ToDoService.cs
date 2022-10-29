@@ -36,8 +36,13 @@ namespace ToDoApi.DataService
 
         }
 
-        public void Update(ToDo todo)
+        public void Update(int id,ToDo todo)
         {
+            var data = _context.ToDo
+                .FirstOrDefault(s => s.Id == id);
+            if (data == null)
+                Debug.WriteLine("-- Not Found --");
+            data.ToDoName = todo.ToDoName;
             _context.ToDo.Update(todo);
             _context.SaveChanges();
 

@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ToDoApi.DataService;
+using ToDoApi.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,37 +10,50 @@ namespace ToDoApi.Controllers
     [ApiController]
     public class ToDoController : ControllerBase
     {
+        private ITodoService _todoService;
 
+        public ToDoController(ITodoService todoService)
+        {
+            _todoService = todoService;
+        }
         // GET: api/<ToDoController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var data = _todoService.GetAll();
+            return Ok(data);
         }
 
         // GET api/<ToDoController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            var data = _todoService.GetById(id);
+            return Ok(data);
         }
 
         // POST api/<ToDoController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] ToDo todo)
         {
+            _todoService.Add(todo);
+            return StatusCode(StatusCodes.Status201Created);
         }
 
         // PUT api/<ToDoController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] ToDo toDo)
         {
+            _todoService.Update(id,toDo);
+            return StatusCode(StatusCodes.Status202Accepted);
         }
 
         // DELETE api/<ToDoController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            _todoService.Delete(id);
+            return StatusCode(StatusCodes.Status204NoContent);
         }
     }
 }
