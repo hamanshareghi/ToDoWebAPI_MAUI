@@ -18,9 +18,10 @@ namespace MAUIClient.DataService
         private readonly string _url;
         private readonly JsonSerializerOptions _jsoSerializerOption;
 
-        public ToDoService()
+        public ToDoService(HttpClient httpClient)
         {
-            _httpClient = new HttpClient();
+            //_httpClient = new HttpClient();
+            _httpClient=httpClient;
             _baseAddress = DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5009" : "http://localhost:5009";
             _url = $"{_baseAddress}/api";
             _jsoSerializerOption = new JsonSerializerOptions

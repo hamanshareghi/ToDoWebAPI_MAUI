@@ -4,18 +4,24 @@
              x:Class="MauiClient.Pages.ManageToDoPage"
              Title="Manage ToDo ">
 
+    <Grid RowDefinitions="*,Auto" ColumnDefinitions="*,*,*" ColumnSpacing="5">
 
-    <ContentPage.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Margin"
-                    Value="0,5,0,5"/>
-        </Style>
-    </ContentPage.Resources>
-    <VerticalStackLayout Margin="20">
-        <Label Text="What do yo want to do?" />
-        <Entry Text="{Binding Path=ToDo.ToDoName}" Placeholder="Enter Item" />
-        <Button Text="Save" Clicked="OnSaveButtonClicked"/>
-        <Button Text="Delete" Clicked="OnDeleteButtonClicked"/>
-        <Button Text="Cancle" Clicked="OnCancleButtonClicked"/>
-    </VerticalStackLayout>
+        <TableView Intent="Data" Grid.Row="0" Grid.ColumnSpan="3">
+            <TableRoot>
+                <TableSection Title="What Do You Want To do?">
+                    <EntryCell Text="{Binding Path=ToDo.ToDoName}" Placeholder="Enter Item" />
+
+                    
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <Button Text="Save"  Grid.Row="1"  Grid.Column="0" Clicked="OnSaveButtonClicked" Margin="20,5"/>
+        <Button Text="Delete"  Grid.Row="1"  Grid.Column="1"  Clicked="OnDeleteButtonClicked" Margin="0,5"/>
+        <Button Text="Cancle"  Grid.Row="1"  Grid.Column="2"  Clicked="OnCancleButtonClicked" Margin="20,5"/>
+    </Grid>
+  
+   
+ 
+
+
 </ContentPage>
